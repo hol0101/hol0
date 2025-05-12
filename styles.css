@@ -1,41 +1,37 @@
-/* Reset and full height for body */
+/* Resetting styles for full height */
 html, body {
   height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
   color: #fff;
+  overflow-x: hidden; /* Ensure no horizontal scroll */
 }
 
-/* Hero Section */
+/* Background container with fixed radial gradient */
 .container {
   width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #313131; /* Background color as fallback */
+  height: 100vh; /* Full viewport height */
+  background-color: #313131; /* Background color fallback */
   background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0); /* Your background pattern */
   background-size: 30px 30px;
   background-position: -5px -5px;
-  background-attachment: fixed; /* This makes the background stay fixed while scrolling */
+  background-attachment: fixed; /* This makes the background fixed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Ensure the background is below content */
 }
 
-/* Centering the logo in the container */
-.logo {
-  max-width: 200px;
-  height: auto;
-}
-
-/* Content section */
+/* Content section that scrolls over the fixed background */
 .content-section {
-  padding: 60px 20px;
-  background-color: #1e1e1e;
-  color: #fff;
   position: relative;
-  z-index: 10; /* Ensures content is above the background */
+  z-index: 1; /* Ensure the content is above the background */
+  padding: 60px 20px;
+  background-color: rgba(30, 30, 30, 0.9); /* Slightly dark transparent background for readability */
+  color: #fff;
 }
 
-/* Socials */
+/* Socials Section */
 .socials {
   display: flex;
   gap: 15px;

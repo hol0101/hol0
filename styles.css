@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Fixed background with dot pattern */
+/* Background pattern layer - full screen, fixed */
 .container {
   position: fixed;
   top: 0;
@@ -17,26 +17,30 @@
   background-size: 30px 30px;
   background-position: -5px -5px;
   z-index: -1;
+  pointer-events: none;
 }
 
-/* Page layout and content styling */
+/* Body: transparent over background */
 body {
   font-family: Arial, sans-serif;
   color: white;
   background: transparent;
-  padding: 40px;
+  overflow-x: hidden;
 }
 
+/* Space content far below the top */
 .content-section {
+  padding-top: 120vh; /* Forces user to scroll down to see content */
   max-width: 800px;
   margin: auto;
 }
 
+/* Fade-in blocks */
 .fade-in {
   margin-bottom: 50px;
 }
 
-/* Social icons */
+/* Social icons layout */
 .socials {
   display: flex;
   gap: 20px;

@@ -1,26 +1,24 @@
-/* Reset basics */
+/* Reset & utility */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Background pattern layer - full screen, fixed */
+/* Fixed full-screen dot background */
 .container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   background-color: #313131;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-image: radial-gradient(rgba(255,255,255,0.17) 2px, transparent 0);
   background-size: 30px 30px;
   background-position: -5px -5px;
   z-index: -1;
   pointer-events: none;
 }
 
-/* Body: transparent over background */
+/* Body sits transparent over the background */
 body {
   font-family: Arial, sans-serif;
   color: white;
@@ -28,129 +26,59 @@ body {
   overflow-x: hidden;
 }
 
-/* Space content far below the top */
-.content-section {
-  padding-top: 120vh; /* Forces user to scroll down to see content */
-  max-width: 800px;
-  margin: auto;
+/* Push content down so you must scroll */
+.spacer {
+  height: 100vh;
 }
 
-/* Fade-in blocks */
-.fade-in {
-  margin-bottom: 50px;
-}
-
-/* Social icons layout */
-.socials {
-  display: flex;
-  gap: 20px;
-  margin-top: 10px;
-}
-
-.social-link {
-  color: white;
-  font-size: 2rem;
-  text-decoration: none;
-  transition: transform 0.3s;
-}
-
-.social-link:hover {
-  transform: scale(1.2);
-  color: #1da1f2;
-}
-
-body {
-  margin: 0;
-  background: url('your-background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  overflow-x: hidden;
-}
-
+/* Center the card */
 .card-container {
   display: flex;
   justify-content: center;
-  margin-top: 100vh; /* Forces user to scroll */
+  margin-bottom: 100px;
 }
 
+/* The social icons card */
 .card {
   display: flex;
-  height: 70px;
   width: 350px;
-  background: transparent;
+  height: 70px;
+  gap: 0;
+  position: relative;
 }
 
-.card a svg {
-  position: absolute;
-  display: flex;
-  width: 60%;
-  height: 100%;
-  font-size: 24px;
-  font-weight: 700;
-  opacity: 1;
-  transition: opacity 0.25s;
-  z-index: 2;
-  padding: 0.25rem;
-  cursor: pointer;
-}
-
-.card .social-link1,
-.card .social-link2,
-.card .social-link3,
-.card .social-link4,
-.card .social-link5 {
+.card a {
+  flex: 1;
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 25%;
-  color: whitesmoke;
-  font-size: 24px;
-  text-decoration: none;
-  transition: 0.25s;
+  align-items: center; justify-content: center;
   border-radius: 50px;
+  transition: background 0.25s, transform 0.25s;
 }
 
-.card svg {
-  transform: scale(1);
+/* SVG inside each link */
+.card a svg {
+  width: 60%;
+  height: 60%;
+  z-index: 1;
 }
 
-.card .social-link1:hover {
-  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-  animation: bounce_613 0.4s linear;
+/* Hover effects */
+.social-link1:hover {
+  background: linear-gradient(45deg,
+    #f09433 0%, #e6683c 25%,
+    #dc2743 50%, #cc2366 75%,
+    #bc1888 100%);
+  animation: bounce 0.4s;
 }
+.social-link2:hover { background-color: #242c34; animation: bounce 0.4s; }
+.social-link3:hover { background-color: #5865f2; animation: bounce 0.4s; }
+.social-link4:hover { background-color: #0a66c2; animation: bounce 0.4s; }
+.social-link5:hover { background-color: #ff8000; animation: bounce 0.4s; }
 
-.card .social-link2:hover {
-  background-color: #242c34;
-  animation: bounce_613 0.4s linear;
+@keyframes bounce {
+  40% { transform: scale(1.4); }
+  60% { transform: scale(0.8); }
+  80% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
-
-.card .social-link3:hover {
-  background-color: #5865f2;
-  animation: bounce_613 0.4s linear;
-}
-
-.card .social-link4:hover {
-  background-color: #0a66c2;
-  animation: bounce_613 0.4s linear;
-}
-
-.card .social-link5:hover {
-  background-color: #ff8000;
-  animation: bounce_613 0.4s linear;
-}
-
-@keyframes bounce_613 {
-  40% {
-    transform: scale(1.4);
-  }
-  60% {
-    transform: scale(0.8);
-  }
-  80% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-

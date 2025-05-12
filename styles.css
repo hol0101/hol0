@@ -41,8 +41,8 @@ body {
 /* The social icons card */
 .card {
   display: flex;
-  width: 350px;
-  height: 70px;
+  width: 10px;
+  height: 10px;
   gap: 0;
   position: relative;
 }

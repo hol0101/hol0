@@ -16,9 +16,3 @@ html, body {
   background-size: 30px 30px;
   background-position: -5px -5px;
 }
-
-/* Optional logo styling */
-.logo {
-  max-width: 200px;
-  height: auto;
-}

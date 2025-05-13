@@ -1,77 +1,50 @@
-/* Full screen dot background */
-body, html {
+/* Ensure html/body span full height */
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: Arial, sans-serif;
-  background-color: #1a1a1a;
-  color: #fff;
   overflow-x: hidden;
 }
 
+/* Your dot-pattern container, fixed in place */
 .container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(0deg, transparent 24%, rgba(114, 114, 114, 0.3) 25%, rgba(114, 114, 114, 0.3) 26%, transparent 27%, transparent 74%, rgba(114, 114, 114, 0.3) 75%, rgba(114, 114, 114, 0.3) 76%, transparent 77%, transparent),
-                    linear-gradient(90deg, transparent 24%, rgba(114, 114, 114, 0.3) 25%, rgba(114, 114, 114, 0.3) 26%, transparent 27%, transparent 74%, rgba(114, 114, 114, 0.3) 75%, rgba(114, 114, 114, 0.3) 76%, transparent 77%, transparent);
+  --color: rgba(114, 114, 114, 0.3);
+  background-color: #191a1a;
+  background-image:
+    linear-gradient(0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
   background-size: 55px 55px;
-  background-attachment: fixed;
   z-index: -1;
 }
 
-/* Content that scrolls */
+/* Scrollable content sits above it */
 .content-section {
   position: relative;
   z-index: 1;
-  padding: 50px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.spacer {
-  height: 100vh;
-}
-
-/* Social Card */
-.card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 20px 30px;
-  display: flex;
-  gap: 20px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 30px rgba(0,0,0,0.5);
-}
-
-.card a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  color: #ccc;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.card a:hover {
-  color: #fff;
-  transform: scale(1.1);
-}
-
-.card svg {
-  width: 24px;
-  height: 24px;
+  /* …your existing content styles… */
 }

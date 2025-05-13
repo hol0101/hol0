@@ -1,44 +1,93 @@
-/* Socials Section */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page Layout */
+body {
+  font-family: sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#444 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: -1;
+}
+
+.content-section {
+  padding: 60px 20px;
+}
+
+/* Spacer for scrolling */
+.spacer {
+  height: 100vh;
+}
+
+/* Card Layout */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.card a svg {
+  width: 32px;
+  height: 32px;
+  fill: #fff;
+  transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.card a:hover svg {
+  transform: scale(1.2);
+  fill: #00bcd4;
+}
+
+/* Follow Me Section */
 .socials-section {
   text-align: center;
-  margin: 80px auto 60px;
-  color: white;
+  margin-top: 60px;
 }
 
 .socials-section h2 {
-  font-size: 2rem;
   margin-bottom: 20px;
-  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.social-icons a {
-  display: inline-flex;
-  width: 60px;
-  height: 60px;
-  padding: 12px;
-  border-radius: 50%;
-  background-color: #1f1f1f;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+.social-icons .social img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.social-icons a img {
-  width: 100%;
-  height: auto;
-  filter: invert(1);
-}
-
-.social-icons a:hover {
+.social-icons .social:hover img {
   transform: scale(1.2);
+  filter: brightness(0) invert(0.5) sepia(1) saturate(5) hue-rotate(180deg);
 }
-
-.social.discord:hover { background-color: #5865F2; }
-.social.twitch:hover  { background-color: #9146FF; }
-.social.steam:hover   { background-color: #000000; }
-.social.youtube:hover { background-color: #FF0000; }

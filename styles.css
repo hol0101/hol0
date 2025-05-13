@@ -1,84 +1,44 @@
-/* Reset & utility */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Fixed full-screen dot background */
-.container {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background-color: #313131;
-  background-image: radial-gradient(rgba(255,255,255,0.17) 2px, transparent 0);
-  background-size: 30px 30px;
-  background-position: -5px -5px;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Body sits transparent over the background */
-body {
-  font-family: Arial, sans-serif;
+/* Socials Section */
+.socials-section {
+  text-align: center;
+  margin: 80px auto 60px;
   color: white;
-  background: transparent;
-  overflow-x: hidden;
 }
 
-/* Push content down so you must scroll */
-.spacer {
-  height: 100vh;
+.socials-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
-/* Center the card */
-.card-container {
+.social-icons {
   display: flex;
   justify-content: center;
-  margin-bottom: 100px;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-/* The social icons card */
-.card {
-  display: flex;
-  width: 10px;
-  height: 10px;
-  gap: 0;
-  position: relative;
+.social-icons a {
+  display: inline-flex;
+  width: 60px;
+  height: 60px;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: #1f1f1f;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.card a {
-  flex: 1;
-  position: relative;
-  display: flex;
-  align-items: center; justify-content: center;
-  border-radius: 50px;
-  transition: background 0.25s, transform 0.25s;
+.social-icons a img {
+  width: 100%;
+  height: auto;
+  filter: invert(1);
 }
 
-/* SVG inside each link */
-.card a svg {
-  width: 60%;
-  height: 60%;
-  z-index: 1;
+.social-icons a:hover {
+  transform: scale(1.2);
 }
 
-/* Hover effects */
-.social-link1:hover {
-  background: linear-gradient(45deg,
-    #f09433 0%, #e6683c 25%,
-    #dc2743 50%, #cc2366 75%,
-    #bc1888 100%);
-  animation: bounce 0.4s;
-}
-.social-link2:hover { background-color: #242c34; animation: bounce 0.4s; }
-.social-link3:hover { background-color: #5865f2; animation: bounce 0.4s; }
-.social-link4:hover { background-color: #0a66c2; animation: bounce 0.4s; }
-.social-link5:hover { background-color: #ff8000; animation: bounce 0.4s; }
-
-@keyframes bounce {
-  40% { transform: scale(1.4); }
-  60% { transform: scale(0.8); }
-  80% { transform: scale(1.2); }
-  100% { transform: scale(1); }
-}
+.social.discord:hover { background-color: #5865F2; }
+.social.twitch:hover  { background-color: #9146FF; }
+.social.steam:hover   { background-color: #000000; }
+.social.youtube:hover { background-color: #FF0000; }

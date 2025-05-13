@@ -1,0 +1,15 @@
+<script>
+  (function() {
+    const ICON_PATH = 'Logo.png';   // your favicon file
+
+    // Remove existing favicons
+    document.querySelectorAll('link[rel~="icon"]').forEach(el => el.remove());
+
+    // Inject the new one
+    const link = document.createElement('link');
+    link.rel  = 'icon';
+    link.type = 'image/png';
+    link.href = ICON_PATH;
+    document.head.appendChild(link);
+  })();
+</script>

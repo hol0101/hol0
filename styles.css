@@ -145,6 +145,7 @@ html, body {
 
 
 
+/* ───────────────────── Stats Section ───────────────────── */
 .stats-container {
   display: flex;
   justify-content: center;
@@ -197,10 +198,17 @@ html, body {
   color: #61dafb;
   text-decoration: none;
   font-size: 14px;
+  font-weight: 600;
   transition: opacity 0.2s;
 }
 
 .stats-link:hover {
   opacity: 0.8;
+}
+
+.game-hours {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
 }
 

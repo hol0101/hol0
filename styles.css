@@ -112,19 +112,18 @@ html, body {
   margin: 80px 20px;
 }
 
-/* ──────────────────── Neon-Gradient Border Glow ──────────────────── */
+/* ─────────────────────────────────────────────────────────── */
+/* Shared gradient definition for borders */
 :root {
   --card-gradient: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
 }
 
-.about-me-box,
-.stats-box {
-  position: relative;
-  background-color: #48484B;        /* solid interior */
+/* ─────────────────── “About Me” Box ─────────────────── */
+.about-me-box {
+  background-color: #48484B;       /* solid dark interior */
   color: white;
   padding: 30px;
   border-radius: 16px;
-  border: 4px solid transparent;    /* reserve space for glow */
   max-width: 600px;
   width: 100%;
   font-family: sans-serif;
@@ -134,41 +133,51 @@ html, body {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  overflow: visible;
-  z-index: 0;
+  
+  /* thin gradient border */
+  border: 2px solid transparent;
+  border-image: var(--card-gradient) 1; 
 }
 
-/* Blurred gradient behind the border */
-.about-me-box::before,
-.stats-box::before {
-  content: "";
-  position: absolute;
-  top: -6px;      /* extend outside to form glowing border */
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
-  border-radius: 22px;             /* slightly larger than 16px */
-  background: var(--card-gradient);
-  filter: blur(12px);
-  opacity: 0.9;
-  z-index: -1;
-}
-
-/* Once JS adds “visible”, show them */
-.about-me-box.visible,
-.stats-box.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ───────────────────── About Me Box ───────────────────── */
 .about-me-box h2 {
   margin-top: 0;
   font-size: 28px;
   margin-bottom: 12px;
 }
 
-/* ───────────────────── Stats Section ───────────────────── */
+/* When JS adds “visible”, show it */
+.about-me-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────── “Stats” Box ─────────────────── */
+.stats-box {
+  background-color: #48484B;       /* solid dark interior */
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  
+  /* thin gradient border */
+  border: 2px solid transparent;
+  border-image: var(--card-gradient) 1;
+}
+
+.stats-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ───────────────────── Stats Section Detail Styles ───────────────────── */
 .game-stat {
   display: flex;
   align-items: center;

@@ -122,7 +122,7 @@ html, body {
 /* ─────────────────── “About Me” Box ─────────────────── */
 .about-me-box {
   position: relative;
-  z-index: 0;                   /* create stacking context */
+  z-index: 1;                   /* place box above its ::before glow */
   background-color: #48484B;    /* solid dark interior */
   color: white;
   padding: 30px;
@@ -146,12 +146,12 @@ html, body {
 .about-me-box::before {
   content: "";
   position: absolute;
-  z-index: -1;                   /* behind the box */
-  top: -6px;                     /* extend outside for glow */
+  z-index: 0;                   /* behind the box itself */
+  top: -6px;                    /* extend outside for glow */
   left: -6px;
   right: -6px;
   bottom: -6px;
-  border-radius: 20px;           /* match box radius */
+  border-radius: 20px;          /* match box radius */
   background: var(--card-gradient);
   filter: blur(12px);
   opacity: 0.7;
@@ -165,7 +165,7 @@ html, body {
 /* ─────────────────── “Stats” Box ─────────────────── */
 .stats-box {
   position: relative;
-  z-index: 0;                   /* create stacking context */
+  z-index: 1;                   /* place box above its ::before glow */
   background-color: #48484B;    /* solid dark interior */
   color: white;
   padding: 30px;
@@ -189,12 +189,12 @@ html, body {
 .stats-box::before {
   content: "";
   position: absolute;
-  z-index: -1;                   /* behind the box */
-  top: -6px;                     /* extend outside for glow */
+  z-index: 0;                   /* behind the box itself */
+  top: -6px;                    /* extend outside for glow */
   left: -6px;
   right: -6px;
   bottom: -6px;
-  border-radius: 20px;           /* match box radius */
+  border-radius: 20px;          /* match box radius */
   background: var(--card-gradient);
   filter: blur(12px);
   opacity: 0.7;
@@ -205,6 +205,36 @@ html, body {
   transform: translateY(0);
 }
 
+/* ─── Align Game Icons and Text in Stats Box ─── */
+.stats-box .game-stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;             /* space between text, icon, and link */
+  margin-top: 16px;
+}
+
+.stats-box .game-name {
+  font-weight: bold;
+  flex-shrink: 0;        /* prevent text from shrinking */
+}
+
+.stats-box .rank-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.stats-box .stats-link {
+  margin-left: auto;     /* push link to the far right */
+  color: #f7ba2b;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.stats-box .stats-link:hover {
+  opacity: 0.8;
+}
 
 /* ───── Holographic Sight Styles ───── */
 .holo-sight-wrapper {
@@ -313,4 +343,3 @@ html, body {
     0 0 8px rgba(0, 255, 0, 0.9),
     0 0 16px rgba(0, 255, 0, 0.6);
 }
-

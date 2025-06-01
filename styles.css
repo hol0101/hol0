@@ -312,10 +312,10 @@ html, body {
   left: 10%;
   width: 80%;
   height: 2px;
-  background: rgba(0, 255, 0, 0.8);
+  background: rgba(249, 13, 0, 0.68);
   transform: translateY(-50%);
   border-radius: 1px;
-  box-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+  box-shadow: 0 0 5px rgba(249, 13, 0, 0.68);
 }
 
 .reticle .vertical-line {
@@ -324,10 +324,10 @@ html, body {
   left: 50%;
   width: 2px;
   height: 80%;
-  background: rgba(0, 255, 0, 0.8);
+  background: rgba(249, 13, 0, 0.68);
   transform: translateX(-50%);
   border-radius: 1px;
-  box-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+  box-shadow: 0 0 5px rgba(249, 13, 0, 0.68);
 }
 
 .reticle .dot {
@@ -340,6 +340,6 @@ html, body {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 
-    0 0 8px rgba(0, 255, 0, 0.9),
-    0 0 16px rgba(0, 255, 0, 0.6);
+    0 0 8px rgba(249, 13, 0, 0.68),
+    0 0 16px rgba(249, 13, 0, 0.68);
 }

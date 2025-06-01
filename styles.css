@@ -122,10 +122,11 @@ html, body {
 /* ─────────────────── “About Me” Box ─────────────────── */
 .about-me-box {
   position: relative;
-  background-color: #48484B;       /* solid dark interior */
+  z-index: 0;                   /* create stacking context */
+  background-color: #48484B;    /* solid dark interior */
   color: white;
   padding: 30px;
-  border-radius: 20px;             /* rounded corners */
+  border-radius: 20px;          /* keeps corners rounded */
   max-width: 600px;
   width: 100%;
   font-family: sans-serif;
@@ -140,30 +141,22 @@ html, body {
   border: 4px solid transparent;
   border-image: var(--card-gradient) 1;
   overflow: visible;
-  z-index: 0;
 }
 
 .about-me-box::before {
   content: "";
   position: absolute;
-  top: -6px;      /* extend outside for glow */
+  z-index: -1;                   /* behind the box */
+  top: -6px;                     /* extend outside for glow */
   left: -6px;
   right: -6px;
   bottom: -6px;
-  border-radius: 20px;             /* match box radius */
+  border-radius: 20px;           /* match box radius */
   background: var(--card-gradient);
   filter: blur(12px);
   opacity: 0.7;
-  z-index: -1;
 }
 
-.about-me-box h2 {
-  margin-top: 0;
-  font-size: 28px;
-  margin-bottom: 12px;
-}
-
-/* Show when JS adds “visible” */
 .about-me-box.visible {
   opacity: 1;
   transform: translateY(0);
@@ -172,10 +165,11 @@ html, body {
 /* ─────────────────── “Stats” Box ─────────────────── */
 .stats-box {
   position: relative;
-  background-color: #48484B;       /* solid dark interior */
+  z-index: 0;                   /* create stacking context */
+  background-color: #48484B;    /* solid dark interior */
   color: white;
   padding: 30px;
-  border-radius: 20px;             /* rounded corners */
+  border-radius: 20px;          /* keeps corners rounded */
   max-width: 600px;
   width: 100%;
   font-family: sans-serif;
@@ -190,21 +184,20 @@ html, body {
   border: 4px solid transparent;
   border-image: var(--card-gradient) 1;
   overflow: visible;
-  z-index: 0;
 }
 
 .stats-box::before {
   content: "";
   position: absolute;
-  top: -6px;      /* extend outside for glow */
+  z-index: -1;                   /* behind the box */
+  top: -6px;                     /* extend outside for glow */
   left: -6px;
   right: -6px;
   bottom: -6px;
-  border-radius: 20px;             /* match box radius */
+  border-radius: 20px;           /* match box radius */
   background: var(--card-gradient);
   filter: blur(12px);
   opacity: 0.7;
-  z-index: -1;
 }
 
 .stats-box.visible {
@@ -212,43 +205,3 @@ html, body {
   transform: translateY(0);
 }
 
-/* ───────────────────── Stats Section Detail Styles ───────────────────── */
-.game-stat {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #3c3c3e;
-  padding: 12px 16px;
-  border-radius: 10px;
-  margin-bottom: 14px;
-}
-
-/* Override space-between only for Rust row so icon sits next to text */
-.game-stat.no-link {
-  justify-content: flex-start;
-  gap: 10px;
-}
-
-.game-name {
-  color: white;
-  font-weight: bold;
-  /* flex: 1;  <-- remove or comment out flex:1 for .no-link rows */
-}
-
-.rank-icon {
-  width: 32px;
-  height: 32px;
-  /* no extra margin needed when using gap */
-}
-
-.stats-link {
-  color: #61dafb;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600; /* Fat “View Stats” */
-  transition: opacity 0.2s;
-}
-
-.stats-link:hover {
-  opacity: 0.8;
-}

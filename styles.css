@@ -102,11 +102,9 @@ html, body {
   background-color: #4B46D2;
 }
 
-
-
 .social-icon {
   width: 24px;
   height: 24px;
   margin-right: 8px;
+  filter: invert(1); /* makes icons white */
 }
-

@@ -106,19 +106,27 @@ html, body {
   margin: 80px 20px;
 }
 
+.stats-container {
+  display: flex;
+  justify-content: center;
+  margin: 80px 20px;
+}
+
 /* ──────────────────── Neon-Gradient Border Glow ──────────────────── */
-/* We’ll use these rules for both .about-me-box and .stats-box */
+:root {
+  --card-gradient: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+}
 
 .about-me-box,
 .stats-box {
-  --gradient: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
   position: relative;
-  background-color: #48484B;
+  background-color: #48484B;        /* solid interior */
   color: white;
   padding: 30px;
   border-radius: 16px;
-  border: 4px solid transparent; /* reserve space for the glow */
+  border: 4px solid transparent;    /* reserve space for glow */
   max-width: 600px;
+  width: 100%;
   font-family: sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -130,33 +138,27 @@ html, body {
   z-index: 0;
 }
 
+/* Blurred gradient behind the border */
 .about-me-box::before,
 .stats-box::before {
   content: "";
   position: absolute;
-  top: -6px;     /* extend outside to form the neon outline */
+  top: -6px;      /* extend outside to form glowing border */
   left: -6px;
   right: -6px;
   bottom: -6px;
-  border-radius: 22px;   /* slightly larger than the box’s 16px radius */
-  background: var(--gradient);
+  border-radius: 22px;             /* slightly larger than 16px */
+  background: var(--card-gradient);
   filter: blur(12px);
   opacity: 0.9;
   z-index: -1;
-  transition: opacity 0.5s ease;
 }
 
-/* When the box becomes visible, show both the box and its glow */
+/* Once JS adds “visible”, show them */
 .about-me-box.visible,
 .stats-box.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Fade out glow on hover (optional, matches .card:hover behavior) */
-.about-me-box:hover::before,
-.stats-box:hover::before {
-  opacity: 0;
 }
 
 /* ───────────────────── About Me Box ───────────────────── */
@@ -167,12 +169,6 @@ html, body {
 }
 
 /* ───────────────────── Stats Section ───────────────────── */
-.stats-container {
-  display: flex;
-  justify-content: center;
-  margin: 80px 20px;
-}
-
 .game-stat {
   display: flex;
   align-items: center;

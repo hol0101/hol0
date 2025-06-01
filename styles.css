@@ -101,3 +101,12 @@ html, body {
 .social-link.steam {
   background-color: #4B46D2;
 }
+
+
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+

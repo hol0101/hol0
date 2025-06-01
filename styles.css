@@ -86,18 +86,9 @@ html, body {
   opacity: 0.9;
 }
 
-.social-link.twitch {
-  background-color: #48484B;
-}
-
-.social-link.discord {
-  background-color: #48484B;
-}
-
-.social-link.tiktok {
-  background-color: #48484B;
-}
-
+.social-link.twitch,
+.social-link.discord,
+.social-link.tiktok,
 .social-link.steam {
   background-color: #48484B;
 }
@@ -120,6 +111,7 @@ html, body {
   color: white;
   padding: 30px;
   border-radius: 16px;
+  border: 2px solid #181818; /* Added dark outline */
   max-width: 600px;
   font-family: sans-serif;
   font-size: 16px;
@@ -142,9 +134,6 @@ html, body {
   transform: translateY(0);
 }
 
-
-
-
 /* ───────────────────── Stats Section ───────────────────── */
 .stats-container {
   display: flex;
@@ -157,6 +146,7 @@ html, body {
   color: white;
   padding: 30px;
   border-radius: 16px;
+  border: 2px solid #181818; /* Added dark outline */
   max-width: 600px;
   font-family: sans-serif;
   font-size: 16px;
@@ -211,5 +201,3 @@ html, body {
 .stats-link:hover {
   opacity: 0.8;
 }
-
-/* (You already had .game-hours for Rust, but now it’s baked into .game-name) */

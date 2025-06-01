@@ -49,6 +49,7 @@ html, body {
   /* …your existing content styles… */
 }
 
+/* ───────────────────── Social Links ───────────────────── */
 .socials {
   text-align: center;
   color: white;
@@ -100,6 +101,7 @@ html, body {
   filter: invert(1); /* makes icons white */
 }
 
+/* ───────────────── About Me & Stats Containers ───────────────── */
 .about-me-container {
   display: flex;
   justify-content: center;
@@ -112,18 +114,18 @@ html, body {
   margin: 80px 20px;
 }
 
-/* ─────────────────────────────────────────────────────────── */
-/* Shared gradient definition for borders */
+/* ───────────────── Gradient and Glow Definitions ───────────────── */
 :root {
   --card-gradient: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
 }
 
 /* ─────────────────── “About Me” Box ─────────────────── */
 .about-me-box {
+  position: relative;
   background-color: #48484B;       /* solid dark interior */
   color: white;
   padding: 30px;
-  border-radius: 16px;             /* keeps corners rounded */
+  border-radius: 20px;             /* rounded corners */
   max-width: 600px;
   width: 100%;
   font-family: sans-serif;
@@ -133,10 +135,26 @@ html, body {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  
+
   /* thicker (4px) gradient border */
   border: 4px solid transparent;
   border-image: var(--card-gradient) 1;
+  overflow: visible;
+  z-index: 0;
+}
+
+.about-me-box::before {
+  content: "";
+  position: absolute;
+  top: -6px;      /* extend outside for glow */
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 20px;             /* match box radius */
+  background: var(--card-gradient);
+  filter: blur(12px);
+  opacity: 0.7;
+  z-index: -1;
 }
 
 .about-me-box h2 {
@@ -145,7 +163,7 @@ html, body {
   margin-bottom: 12px;
 }
 
-/* When JS adds “visible”, show it */
+/* Show when JS adds “visible” */
 .about-me-box.visible {
   opacity: 1;
   transform: translateY(0);
@@ -153,10 +171,11 @@ html, body {
 
 /* ─────────────────── “Stats” Box ─────────────────── */
 .stats-box {
+  position: relative;
   background-color: #48484B;       /* solid dark interior */
   color: white;
   padding: 30px;
-  border-radius: 16px;             /* keeps corners rounded */
+  border-radius: 20px;             /* rounded corners */
   max-width: 600px;
   width: 100%;
   font-family: sans-serif;
@@ -166,10 +185,26 @@ html, body {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  
+
   /* thicker (4px) gradient border */
   border: 4px solid transparent;
   border-image: var(--card-gradient) 1;
+  overflow: visible;
+  z-index: 0;
+}
+
+.stats-box::before {
+  content: "";
+  position: absolute;
+  top: -6px;      /* extend outside for glow */
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 20px;             /* match box radius */
+  background: var(--card-gradient);
+  filter: blur(12px);
+  opacity: 0.7;
+  z-index: -1;
 }
 
 .stats-box.visible {

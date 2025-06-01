@@ -182,23 +182,29 @@ html, body {
   margin-bottom: 14px;
 }
 
+/* Override space-between only for Rust row so icon sits next to text */
+.game-stat.no-link {
+  justify-content: flex-start;
+  gap: 10px;
+}
+
 .game-name {
   color: white;
   font-weight: bold;
-  flex: 1;
+  /* flex: 1;  <-- remove or comment out flex:1 for .no-link rows */
 }
 
 .rank-icon {
   width: 32px;
   height: 32px;
-  margin: 0 10px;
+  /* no extra margin needed when using gap */
 }
 
 .stats-link {
   color: #61dafb;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 600; /* Fat “View Stats” */
   transition: opacity 0.2s;
 }
 
@@ -206,9 +212,4 @@ html, body {
   opacity: 0.8;
 }
 
-.game-hours {
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: bold;
-}
-
+/* (You already had .game-hours for Rust, but now it’s baked into .game-name) */

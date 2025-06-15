@@ -48,7 +48,7 @@ html, body {
   z-index: 1;
 }
 
-/* Socials */
+/*───────────────────── Social Links ─────────────────────*/
 .socials {
   text-align: center;
   color: white;
@@ -100,28 +100,28 @@ html, body {
   filter: invert(1);
 }
 
-/* Containers (FIXED: stacking context) */
+/*──────────────── About Me & Stats Containers ─────────────────*/
 .about-me-container,
 .stats-container {
-  position: relative;  /* NEW */
-  z-index: 0;          /* NEW */
+  position: relative;  /* stacking context for glow */
+  z-index: 0;
   display: flex;
   justify-content: center;
   margin: 80px 20px;
 }
 
-/* Gradient and glow */
+/*──────────────── Gradient Definition ─────────────────*/
 :root {
-  --card-gradient: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+  --card-gradient: linear-gradient(45deg, #ff416c, #ffcc70);
 }
 
-/* About Me & Stats Boxes */
+/*────────────────── “About Me” & “Stats” Boxes ───────────────────*/
 .about-me-box,
 .stats-box {
   position: relative;
-  z-index: 1;
-  background-color: #48484B;
-  color: white;
+  z-index: 1;               /* on top of the glow */
+  background-color: #48484B;/* fully opaque */
+  color: #fff;
   padding: 30px;
   border-radius: 20px;
   max-width: 600px;
@@ -133,33 +133,32 @@ html, body {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  border: 4px solid transparent;
-  border-image: var(--card-gradient) 1;
-  overflow: visible;
 }
 
+/* Glow behind the boxes */
 .about-me-box::before,
 .stats-box::before {
   content: "";
   position: absolute;
-  z-index: 0;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
-  border-radius: 20px;
+  z-index: 0;               /* underneath the box */
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
   background: var(--card-gradient);
-  filter: blur(16px); /* More glow */
-  opacity: 0.85;
+  filter: blur(40px);
+  opacity: 0.7;
+  border-radius: 24px;      /* slightly larger than box */
 }
 
+/* Reveal animation */
 .about-me-box.visible,
 .stats-box.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Game stats */
+/*────────────────── Stats Box Inner Layout ───────────────────*/
 .stats-box .game-stat {
   display: flex;
   align-items: center;
@@ -190,7 +189,7 @@ html, body {
   opacity: 0.8;
 }
 
-/* Holo Sight */
+/*──────────────────── Holographic Sight ────────────────────*/
 .holo-sight-wrapper {
   display: flex;
   justify-content: center;
@@ -207,7 +206,6 @@ html, body {
   box-shadow:
     0 0 15px rgba(0, 255, 0, 0.6),
     inset 0 0 10px rgba(0, 255, 0, 0.5);
-  overflow: visible;
   animation: holo-flicker 1s infinite alternate;
 }
 
@@ -291,7 +289,7 @@ html, body {
   background: rgba(0, 255, 0, 1);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 
+  box-shadow:
     0 0 8px rgba(249, 13, 0, 0.68),
     0 0 16px rgba(249, 13, 0, 0.68);
 }

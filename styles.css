@@ -246,34 +246,3 @@ html, body {
     0 0 16px rgba(249, 13, 0, 0.68);
 }
 
-
-.media-container {
-  position: relative;
-  z-index: 0;
-  display: flex;
-  justify-content: center;
-  margin: 80px 20px;
-}
-
-.media-box {
-  border-radius: 10px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  position: relative;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* ✅ Fixed hyphen */
-}
-
-.media-box.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.carousel-media {
-  width: 100%;
-  height: auto;
-  display: block;
-}

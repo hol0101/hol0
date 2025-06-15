@@ -63,31 +63,17 @@ I have about 2,500 hours in Rust and mainly focus on 2x and 10x servers when I�
   </div>
 
 <!-- Stats Section -->
-<div class="stats-container">
-  <div class="stats-box hidden">
-    <h2>Game Stats</h2>
-
-    <!-- R6 Siege (stays as before) -->
-    <div class="game-stat">
-      <span class="game-name">Rainbow Six Siege:</span>
-      <img
-        src="https://cdn3.emoji.gg/emojis/93489-rainbowsixsigeplatinum.png"
-        alt="Platinum Rank"
-        class="rank-icon"
-      />
-      </a>
-    </div>
-
-    <!-- Rust (icon moved right after “2.5k hours” & justify-content overridden) -->
-    <div class="game-stat no-link">
-      <span class="game-name">Rust: 2.5k hours</span>
-      <img
-        src="https://vignette.wikia.nocookie.net/play-rust/images/c/ce/Big_Grin_icon.png/revision/latest?cb=20161209145457"
-        alt="Rust Icon"
-        class="rank-icon"
-      />
-    </div>
-
+<!-- ▶▶  Media carousel (replaces the old Stats box)  ◀◀ -->
+<div class="media-container">
+  <div class="media-box hidden">
+    <!-- A single video tag; src will be swapped by JS -->
+    <video id="carouselVideo"
+           class="carousel-media"
+           muted
+           playsinline
+           preload="auto"
+           loop     <!-- loop while on one clip -->
+    ></video>
   </div>
 </div>
 

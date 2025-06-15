@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'WonderfulRainbow';
+  src: url('assets/Wonderful Rainbow.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Ensure html/body span full height */
 html, body {
   margin: 0;
@@ -57,6 +64,7 @@ html, body {
 }
 
 .socials h2 {
+  font-family: 'WonderfulRainbow', sans-serif;
   font-size: 28px;
   margin-bottom: 20px;
 }

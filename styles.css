@@ -129,7 +129,6 @@ html, body {
   font-family: sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;

@@ -280,7 +280,7 @@ html, body {
 
 .screenshot-gallery img:hover {
   transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(255, 204, 112, 0.6);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0);
   cursor: zoom-in;
 }
 

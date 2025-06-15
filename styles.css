@@ -6,7 +6,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Your dot-pattern container, fixed in place */
+/* Dot-pattern background container */
 .container {
   position: fixed;
   top: 0;
@@ -42,14 +42,13 @@ html, body {
   z-index: -1;
 }
 
-/* Scrollable content sits above it */
+/* Scrollable content sits above background */
 .content-section {
   position: relative;
   z-index: 1;
-  /* …your existing content styles… */
 }
 
-/* ───────────────────── Social Links ───────────────────── */
+/* Socials */
 .socials {
   text-align: center;
   color: white;
@@ -98,78 +97,33 @@ html, body {
   width: 24px;
   height: 24px;
   margin-right: 8px;
-  filter: invert(1); /* makes icons white */
+  filter: invert(1);
 }
 
-/* ───────────────── About Me & Stats Containers ───────────────── */
-.about-me-container {
-  display: flex;
-  justify-content: center;
-  margin: 80px 20px;
-}
-
+/* Containers (FIXED: stacking context) */
+.about-me-container,
 .stats-container {
+  position: relative;  /* NEW */
+  z-index: 0;          /* NEW */
   display: flex;
   justify-content: center;
   margin: 80px 20px;
 }
 
-/* ───────────────── Gradient and Glow Definitions ───────────────── */
+/* Gradient and glow */
 :root {
   --card-gradient: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
 }
 
-/* ─────────────────── “About Me” Box ─────────────────── */
-.about-me-box {
-  position: relative;
-  z-index: 1;                   /* place box above its ::before glow */
-  background-color: #48484B;    /* solid dark interior */
-  color: white;
-  padding: 30px;
-  border-radius: 20px;          /* keeps corners rounded */
-  max-width: 600px;
-  width: 100%;
-  font-family: sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-
-  /* thicker (4px) gradient border */
-  border: 4px solid transparent;
-  border-image: var(--card-gradient) 1;
-  overflow: visible;
-}
-
-.about-me-box::before {
-  content: "";
-  position: absolute;
-  z-index: 0;                   /* behind the box itself */
-  top: -6px;                    /* extend outside for glow */
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
-  border-radius: 20px;          /* match box radius */
-  background: var(--card-gradient);
-  filter: blur(12px);
-  opacity: 0.7;
-}
-
-.about-me-box.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ─────────────────── “Stats” Box ─────────────────── */
+/* About Me & Stats Boxes */
+.about-me-box,
 .stats-box {
   position: relative;
-  z-index: 1;                   /* place box above its ::before glow */
-  background-color: #48484B;    /* solid dark interior */
+  z-index: 1;
+  background-color: #48484B;
   color: white;
   padding: 30px;
-  border-radius: 20px;          /* keeps corners rounded */
+  border-radius: 20px;
   max-width: 600px;
   width: 100%;
   font-family: sans-serif;
@@ -179,43 +133,43 @@ html, body {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-
-  /* thicker (4px) gradient border */
   border: 4px solid transparent;
   border-image: var(--card-gradient) 1;
   overflow: visible;
 }
 
+.about-me-box::before,
 .stats-box::before {
   content: "";
   position: absolute;
-  z-index: 0;                   /* behind the box itself */
-  top: -6px;                    /* extend outside for glow */
+  z-index: 0;
+  top: -6px;
   left: -6px;
   right: -6px;
   bottom: -6px;
-  border-radius: 20px;          /* match box radius */
+  border-radius: 20px;
   background: var(--card-gradient);
-  filter: blur(12px);
-  opacity: 0.7;
+  filter: blur(16px); /* More glow */
+  opacity: 0.85;
 }
 
+.about-me-box.visible,
 .stats-box.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ─── Align Game Icons and Text in Stats Box ─── */
+/* Game stats */
 .stats-box .game-stat {
   display: flex;
   align-items: center;
-  gap: 12px;             /* space between text, icon, and link */
+  gap: 12px;
   margin-top: 16px;
 }
 
 .stats-box .game-name {
   font-weight: bold;
-  flex-shrink: 0;        /* prevent text from shrinking */
+  flex-shrink: 0;
 }
 
 .stats-box .rank-icon {
@@ -225,7 +179,7 @@ html, body {
 }
 
 .stats-box .stats-link {
-  margin-left: auto;     /* push link to the far right */
+  margin-left: auto;
   color: #f7ba2b;
   text-decoration: none;
   font-weight: bold;
@@ -236,21 +190,20 @@ html, body {
   opacity: 0.8;
 }
 
-/* ───── Holographic Sight Styles ───── */
+/* Holo Sight */
 .holo-sight-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 40px; /* adjust as needed */
+  margin-top: 40px;
 }
 
-/* Outer circular lens */
 .holo-sight {
   position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: rgba(0, 30, 0, 0.2);        /* slightly tinted “glass” */
-  border: 3px solid rgba(0, 255, 0, 0.7);  /* glowing green edge */
+  background: rgba(0, 30, 0, 0.2);
+  border: 3px solid rgba(0, 255, 0, 0.7);
   box-shadow:
     0 0 15px rgba(0, 255, 0, 0.6),
     inset 0 0 10px rgba(0, 255, 0, 0.5);
@@ -258,7 +211,6 @@ html, body {
   animation: holo-flicker 1s infinite alternate;
 }
 
-/* Flicker animation */
 @keyframes holo-flicker {
   0%, 100% {
     opacity: 0.95;
@@ -274,7 +226,6 @@ html, body {
   }
 }
 
-/* Scan‐line shimmer (optional) */
 .scan-line {
   position: absolute;
   top: -15%;
@@ -295,7 +246,6 @@ html, body {
   }
 }
 
-/* Reticle crosshair + dot */
 .reticle {
   position: absolute;
   top: 50%;
@@ -306,16 +256,20 @@ html, body {
   pointer-events: none;
 }
 
+.reticle .horizontal-line,
+.reticle .vertical-line {
+  background: rgba(249, 13, 0, 0.68);
+  box-shadow: 0 0 5px rgba(249, 13, 0, 0.68);
+}
+
 .reticle .horizontal-line {
   position: absolute;
   top: 50%;
   left: 10%;
   width: 80%;
   height: 2px;
-  background: rgba(249, 13, 0, 0.68);
   transform: translateY(-50%);
   border-radius: 1px;
-  box-shadow: 0 0 5px rgba(249, 13, 0, 0.68);
 }
 
 .reticle .vertical-line {
@@ -324,10 +278,8 @@ html, body {
   left: 50%;
   width: 2px;
   height: 80%;
-  background: rgba(249, 13, 0, 0.68);
   transform: translateX(-50%);
   border-radius: 1px;
-  box-shadow: 0 0 5px rgba(249, 13, 0, 0.68);
 }
 
 .reticle .dot {

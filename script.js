@@ -22,10 +22,10 @@ document.querySelectorAll('.hidden').forEach(el => {
 const mediaFiles = [
   // 👉  Put your own filenames here (relative to /assets/screenshots)
   //     Mix images (png/jpg/webp) *and* video files (mp4/webm) if you like
-  'assets/screenshots/clip1.mp4',
-  'assets/screenshots/clip2.mp4',
-  'assets/screenshots/screenshot1.png',
-  'assets/screenshots/clip3.mp4'
+  'assets/screenshots/Skærmbillede 2025-02-22 015045.png',
+  'assets/CDS2.png to assets/screenshots/CDS2.png',
+  'assets/Skærmbillede 2025-02-23 141256.png',
+  'assets/Skærmbillede 2025-02-23 141307.png'
 ];
 
 let currentIdx = 0;

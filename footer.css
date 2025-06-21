@@ -4,19 +4,30 @@ footer {
   color: #f0f0f0;
   display: flex;
   flex-direction: column;
-  min-height: 200px;  /* ensures enough height */
+  min-height: 200px; /* ensures enough height */
   justify-content: space-between; /* pushes content top & bottom */
-  align-items: center; /* horizontally centers children */
-  text-align: center; /* centers text inside */
+  align-items: center; /* center horizontally */
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-container {
   max-width: 1200px;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* side by side */
+  justify-content: space-between; /* spread out */
+  align-items: flex-start; /* align items at top */
   gap: 40px;
-  align-items: center; /* centers all content horizontally */
+  margin: 0 auto;
+  flex-wrap: wrap; /* responsive wrap */
+}
+
+.footer-section {
+  flex: 1;
+  max-width: 300px;
+  text-align: left; /* Left align content */
 }
 
 .footer-section h2 {
@@ -28,8 +39,7 @@ footer {
 .thanks-list {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
-  max-width: 300px;
+  margin: 0;
   color: #cccccc;
 }
 
@@ -38,11 +48,11 @@ footer {
 }
 
 .footer-credit {
-  margin-top: auto;
-  width: 100%;
+  flex-basis: 100%; /* Take full width */
+  margin-top: 40px; /* spacing above */
   color: #999999;
   font-size: 1rem;
-  text-align: center; /* center text horizontally */
+  text-align: center; /* center horizontally */
 }
 
 .footer-credit p {
@@ -57,4 +67,17 @@ footer {
 .footer-credit small {
   font-size: 0.85rem;
   color: #666666;
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-section {
+    max-width: 100%;
+    text-align: center;
+  }
 }

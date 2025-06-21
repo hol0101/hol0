@@ -1,1 +1,73 @@
+footer {
+  background-color: #1e1e1e;
+  padding: 60px 20px;
+  color: #f0f0f0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.thanks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.thanks-list li {
+  margin-bottom: 0.5rem;
+  color: #cccccc;
+}
+
+.footer-credit {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .footer-credit {
+    text-align: right;
+  }
+}
+
+.footer-credit p {
+  margin: 0.5rem 0;
+  color: #999999;
+}
+
+.footer-credit span {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.footer-credit small {
+  font-size: 0.85rem;
+  color: #666666;
+}
+
+.footer-credit a {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-credit a:hover {
+  color: #ffffff;
+}
 

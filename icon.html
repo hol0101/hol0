@@ -1,15 +1,9 @@
-<script>
-  (function() {
-    const ICON_PATH = 'Logo.png';   // your favicon file
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Site Title</title>
+  <link rel="stylesheet" href="styles.css">
 
-    // Remove existing favicons
-    document.querySelectorAll('link[rel~="icon"]').forEach(el => el.remove());
-
-    // Inject the new one
-    const link = document.createElement('link');
-    link.rel  = 'icon';
-    link.type = 'image/png';
-    link.href = ICON_PATH;
-    document.head.appendChild(link);
-  })();
-</script>
+  <!-- Favicon -->
+  <link rel="icon" href="assets/Logo1.png" type="image/png">
+</head>

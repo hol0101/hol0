@@ -1,6 +1,6 @@
 footer {
   background-color: #1e1e1e;
-  padding: 60px 20px;
+  padding: 60px 20px 30px;
   color: #f0f0f0;
 }
 
@@ -10,13 +10,8 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 40px;
-}
-
-@media (min-width: 768px) {
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  align-items: center;
+  text-align: center;
 }
 
 .footer-section h2 {
@@ -37,13 +32,7 @@ footer {
 }
 
 .footer-credit {
-  text-align: left;
-}
-
-@media (min-width: 768px) {
-  .footer-credit {
-    text-align: right;
-  }
+  margin-top: 40px;
 }
 
 .footer-credit p {
@@ -70,4 +59,3 @@ footer {
 .footer-credit a:hover {
   color: #ffffff;
 }
-

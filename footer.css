@@ -1,6 +1,9 @@
 footer {
   background-color: #1e1e1e;
-  padding: 60px 20px 30px;
+  padding-top: 60px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 20px;
   color: #f0f0f0;
   display: flex;
   flex-direction: column;
@@ -10,6 +13,14 @@ footer {
   text-align: center;
   width: 100%;
   box-sizing: border-box;
+  border-style: none;
+  border-width: 0;
+  border-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: normal;
+  margin: 0;
+  overflow: visible;
 }
 
 .footer-container {
@@ -20,43 +31,87 @@ footer {
   justify-content: space-between; /* spread out */
   align-items: flex-start; /* align items at top */
   gap: 40px;
-  margin: 0 auto;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
   flex-wrap: wrap; /* responsive wrap */
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: normal;
 }
 
 .footer-section {
-  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
   max-width: 300px;
   text-align: left; /* Left align content */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: normal;
 }
 
 .footer-section h2 {
   font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-right: 0;
   margin-bottom: 1rem;
+  margin-left: 0;
   color: #ffffff;
+  line-height: 1.2;
 }
 
 .thanks-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style-type: none;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
   color: #cccccc;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: normal;
 }
 
 .thanks-list li {
+  margin-top: 0;
+  margin-right: 0;
   margin-bottom: 0.5rem;
+  margin-left: 0;
+  padding: 0;
 }
 
 .footer-credit {
   flex-basis: 100%; /* Take full width */
   margin-top: 40px; /* spacing above */
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
   color: #999999;
   font-size: 1rem;
+  font-family: inherit;
+  line-height: normal;
   text-align: center; /* center horizontally */
 }
 
 .footer-credit p {
-  margin: 0.5rem 0;
+  margin-top: 0.5rem;
+  margin-right: 0;
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+  padding: 0;
 }
 
 .footer-credit span {

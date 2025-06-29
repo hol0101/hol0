@@ -98,7 +98,7 @@ html, body {
 .social-link.discord,
 .social-link.tiktok,
 .social-link.steam {
-  background-color: #48484B;
+  background: linear-gradient(135deg,  #48484B, #ff7575);
 }
 
 .social-icon {

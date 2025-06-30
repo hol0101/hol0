@@ -131,10 +131,10 @@ html, body {
   background: #48484B;
   color: #fff;
   padding: 30px;
-  max-width: 600px;
-  width: 100%;
+  max-width: 400px; /* Reduced width */
+  width: 90%;        /* Responsive width */
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 15px;    /* Slightly smaller font for narrow box */
   line-height: 1.6;
   opacity: 0;
   transform: translateY(40px);
@@ -144,9 +144,9 @@ html, body {
   clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  height: 400px;
+  height: 500px; /* Increased height */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(135deg,  #48484B, #424242);
+  background: linear-gradient(135deg, #48484B, #424242);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
